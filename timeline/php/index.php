@@ -75,14 +75,14 @@
 
 
 <div class="container">
-<table width="100%">
-<tr>
-<td width="100%">
+<div class="row">  
+
+<div class="span4">
 <form class="form-horizontal" action="form_submit.php" method="post">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Add Timeline</legend>
+<legend>Add New Event To Timeline</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -139,9 +139,35 @@
 
 </fieldset>
 </form>
-</td>
-</tr>
-</table>
+</div>
+<div class="span4">
+	<form class="form-horizontal" action="wiki_form_submit.php" method="post">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>&nbsp;&nbsp;Create From Wikipedia</legend>
+	
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="Event_Title">Event Title</label>  
+	  <div class="col-md-4">
+	  <input id="Event_Title" name="Event_Title" type="text" placeholder="<?php echo $topic_name ?>" class="form-control input-md" required="">
+	  <span class="help-block">Please provide a short event title</span>  
+	  </div>
+	</div>
+	<!-- Button (Double) -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="Add_Event"></label>
+	  <div class="col-md-8">
+		<button id="Add_Event" name="Add_Event" class="btn btn-success">Add Event</button>
+		<button id="Cancel" name="Cancel" class="btn btn-danger">Cancel</button>
+	  </div>
+	</div>
+	</fieldset>
+</form>	
+</div>
+
+</div>
 
 </div>
 </body>
