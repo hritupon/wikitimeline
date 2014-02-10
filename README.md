@@ -9,3 +9,10 @@ Read wikipedia article in timeline mode. Now you can search any wikipedia articl
 
 Thankful for this plug-in : http://www.technotarek.com/timeliner/.
 Twitter Bootstrap is used for the UI.
+
+
+![alt tag](https://raw.github.com/hritupon/wikitimeline/master/timeline/images/img1.png)
+![alt tag](https://raw.github.com/hritupon/wikitimeline/master/timeline/images/img2.png)
+![alt tag](https://raw.github.com/hritupon/wikitimeline/master/timeline/images/img4.png)
+![alt tag](https://raw.github.com/hritupon/wikitimeline/master/timeline/images/img5.png)
+
