@@ -7,6 +7,7 @@ While creating events you can simply provide an external link, this program will
 
 Read wikipedia article in timeline mode. Now you can search any wikipedia article  and see its timeline at runtime.
 
+[Imp: Modify db_connection.php with your db parameters for personal timelines]
 Thankful for this plug-in : http://www.technotarek.com/timeliner/.
 Twitter Bootstrap is used for the UI.
 
