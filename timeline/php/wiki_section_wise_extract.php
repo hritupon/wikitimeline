@@ -39,17 +39,30 @@
 		//var_dump($section);
 		$index=$section['index'];
 		$line_title=$section['line'];
-		if(($line_title=='External links') || ($line_title=='Further reading') || ($line_title=='Bibliography')||($line_title=='References')||($line_title=='See also')|| ($line_title=='Citations')|| ($line_title=='Notes')
+		//var_dump($line_title);
+		if(($line_title=='External links') 
+		|| ($line_title=='Further reading') 
+		|| ($line_title=='Bibliography')
+		||($line_title=='Biographies')
+		||($line_title=='References')
+		||($line_title=='See also')
+		|| ($line_title=='Citations')
+		|| ($line_title=='Notes')
 		|| ($line_title=='Historiography')  
 		|| ($line_title=='Primary sources')  
 		|| ($line_title=='Specialty studies')  
 		|| ($line_title=='Biographical studies')  
 		|| ($line_title=='Ancestry')  
+		|| ($line_title=='Bibliography and online texts') 
+		|| ($line_title=='Articles and entries') 
+		|| ($line_title=='Footnotes') 
 		){
 			continue;
 		}
-		//var_dump($index.'---'.$line_title);
 		
+		if(startsWith($line_title, "Commentaries on")){
+			continue;
+		}
 		
 		$section_url='http://en.wikipedia.org/w/api.php?format=json&action=parse&page='.$page_name.'&prop=text&section='.$index;
 		$ch_sections = curl_init($section_url);
@@ -70,6 +83,7 @@
 		$content=strip_tags($content,'<img>');
 		//$text = ".".str_replace(".", "..", rtrim($content, '.')).".";
 		$content=preg_replace("/\\[\d*\\]/", "", $content);
+		$content=preg_replace("/\\[edit\]/i", "", $content);
 
 		$text=$content;
 		$re = '/# Split sentences on whitespace between them.
@@ -125,7 +139,16 @@
 		$count++;
 	}
 ?>
-
+<?php 
+function startsWith($haystack, $needle)
+{
+    return $needle === "" || strpos($haystack, $needle) === 0;
+}
+function endsWith($haystack, $needle)
+{
+    return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
+}
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
