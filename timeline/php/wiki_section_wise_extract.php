@@ -39,7 +39,13 @@
 		//var_dump($section);
 		$index=$section['index'];
 		$line_title=$section['line'];
-		if(($line_title=='External links') || ($line_title=='Further reading') || ($line_title=='Bibliography')||($line_title=='References')||($line_title=='See also')){
+		if(($line_title=='External links') || ($line_title=='Further reading') || ($line_title=='Bibliography')||($line_title=='References')||($line_title=='See also')|| ($line_title=='Citations')|| ($line_title=='Notes')
+		|| ($line_title=='Historiography')  
+		|| ($line_title=='Primary sources')  
+		|| ($line_title=='Specialty studies')  
+		|| ($line_title=='Biographical studies')  
+		|| ($line_title=='Ancestry')  
+		){
 			continue;
 		}
 		//var_dump($index.'---'.$line_title);
@@ -63,6 +69,8 @@
 		
 		$content=strip_tags($content,'<img>');
 		//$text = ".".str_replace(".", "..", rtrim($content, '.')).".";
+		$content=preg_replace("/\\[\d*\\]/", "", $content);
+
 		$text=$content;
 		$re = '/# Split sentences on whitespace between them.
 		(?<=                # Begin positive lookbehind.
