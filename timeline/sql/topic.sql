@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `topic`
 --
-
+USE timeline;
 CREATE TABLE IF NOT EXISTS `topic` (
   `parent_topic` varchar(255) DEFAULT NULL,
   `topic` varchar(255) NOT NULL,

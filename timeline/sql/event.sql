@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `event`
 --
-
+USE timeline;
 CREATE TABLE IF NOT EXISTS `event` (
   `Event_ID` int(255) NOT NULL AUTO_INCREMENT,
   `Event_Title` varchar(255) NOT NULL,
