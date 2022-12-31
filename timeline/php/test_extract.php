@@ -4,7 +4,7 @@
 	//$page_name='Indian_independence_movement';
 	//$page_name='Mughal_Empire';
 	//$page_name='Ahom_kingdom';
-	$url = 'http://en.wikipedia.org/w/api.php?action=parse&page='.$page_name.'&format=json&prop=text';
+	$url = 'https://en.wikipedia.org/w/api.php?action=parse&page='.$page_name.'&format=json&prop=text';
 	$ch = curl_init($url);
 	$time_log='';
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
