@@ -14,7 +14,7 @@
 	//$page_name='Ahom_kingdom';
 	$summary=fetch_wiki_data($page_name);
 	$title='';
-	$url ='http://en.wikipedia.org/w/api.php?format=json&action=parse&page='.$page_name.'&prop=sections';
+	$url ='https://en.wikipedia.org/w/api.php?format=json&action=parse&page='.$page_name.'&prop=sections';
 	$ch = curl_init($url);
 	$time_log='';
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -64,7 +64,7 @@
 			continue;
 		}
 		
-		$section_url='http://en.wikipedia.org/w/api.php?format=json&action=parse&page='.$page_name.'&prop=text&section='.$index;
+		$section_url='https://en.wikipedia.org/w/api.php?format=json&action=parse&page='.$page_name.'&prop=text&section='.$index;
 		$ch_sections = curl_init($section_url);
 		
 		curl_setopt ($ch_sections, CURLOPT_RETURNTRANSFER, 1);

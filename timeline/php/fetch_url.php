@@ -5,7 +5,7 @@ function fetch_wiki_data($page_name){
 // format=json: in json format
 // prop=text: send the text content of the article
 // section=0: top content of the page
-	$url = 'http://en.wikipedia.org/w/api.php?action=parse&page='.$page_name.'&format=json&prop=text&section=0';
+	$url = 'https://en.wikipedia.org/w/api.php?action=parse&page='.$page_name.'&format=json&prop=text&section=0';
 	$ch = curl_init($url);
 
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
